@@ -1,0 +1,52 @@
+﻿# --- IDE / OS -----------------------------------------------
+/.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# --- Backend build output -----------------------------------
+data-agent-backend-java/target/
+data-agent-backend/target/
+*.jar
+!target/*.jar.local
+
+# --- Frontend -----------------------------------------------
+node_modules/
+data-agent-frontend/dist/
+data-agent-frontend/public/__diag/
+
+# --- Logs & runtime -----------------------------------------
+*.log
+*.err.log
+nohup.out
+*.pid
+backend-new.log
+backend-new.err.log
+
+# --- Env (keep examples; ignore secrets) ---------------------
+.env
+.env.*
+!.env.example
+
+# --- Debug / local-only artifacts ----------------------------
+resp_*.sse
+shot_*.png
+.shot*.png
+out*.json
+req*.json
+emb*.json
+
+# --- Database dumps / seed data ------------------------------
+# Keep seed & mock data for open source:
+#   - database.sql            (PG agent metadata/knowledge dump)
+#   - src/main/resources/dev_20240627/**  (SQLite demo DBs: ecommerce_ops + knowledge_base + BIRD demos)
+# Runtime copies under data-agent-backend-java/data/ are generated
+# from the resources below at startup, so they are NOT committed:
+data-agent-backend-java/data/
+
+# --- Editor/backup files -------------------------------------
+*.bak
+*.recover
+*~
+docs/diagrams/__arch_check.png
